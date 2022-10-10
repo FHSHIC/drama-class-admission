@@ -6,68 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>戲劇班術科測驗暨徵選入學招生資訊</title>
   </head>
-  <body>
-    <div class="relative -z-50 w-screen overflow-x-hidden bg-[#E8C139]">
+  <body class="overflow-x-hidden">
+    <div class="relative w-screen overflow-x-hidden bg-[#E8C139]">
       <!-- Title -->
-      <div class="mx-[5vw] pt-[4vw] font-serif">
-        <p class="text-[3.5vw]">臺北市立復興高級中學</p>
-        <div class="flex items-end">
-          <p class="text-[4.5vw]">112學年度</p>
-          <p class="ml-[2vw] text-[5vw]">戲劇班</p>
+      <div class="title z-10">
+        <div class="mx-[5vw] pt-[4vw] font-serif">
+          <p class="text-[3.5vw]">臺北市立復興高級中學</p>
+          <div class="flex items-end">
+            <p class="text-[4.5vw]">112學年度</p>
+            <p class="ml-[2vw] text-[5vw]">戲劇班</p>
+          </div>
         </div>
-      </div>
 
-      <div class="flex items-center px-[3.5vw]">
-        <p class="text-[7vw]">術科測驗</p>
-        <img class="h-[7vw] pl-[2vw]" src="img/Deco4.PNG" alt="Deco4" />
-      </div>
-      <div class="mx-[3.5vw] flex items-center">
-        <img class="h-[7vw]" src="img/Deco5.PNG" alt="Deco5" />
-        <p class="ml-[2vw] text-[7vw]">暨甄選入學</p>
-      </div>
-      <div class="mx-[3.5vw] flex items-baseline">
-        <p class="text-[5vw]">招生資訊</p>
-        <img
-          class="-z-30 ml-[7vw] h-[3vw] w-[20vw]"
-          src="img/Deco3.png"
-          alt="Deco3"
-        />
+        <div class="flex items-center px-[3.5vw]">
+          <p class="text-[7vw]">術科測驗</p>
+          <img class="h-[7vw] pl-[2vw]" src="img/Deco4.PNG" alt="Deco4" />
+        </div>
+        <div class="mx-[3.5vw] flex items-center">
+          <img class="h-[7vw]" src="img/Deco5.PNG" alt="Deco5" />
+          <p class="ml-[2vw] text-[7vw]">暨甄選入學</p>
+        </div>
+        <div class="mx-[3.5vw] flex items-baseline">
+          <p class="text-[5vw]">招生資訊</p>
+          <img
+            class="-z-30 ml-[7vw] h-[3vw] w-[20vw]"
+            src="img/Deco3.png"
+            alt="Deco3"
+          />
+        </div>
       </div>
 
       <!-- Dreadful -->
       <div
-        class="absolute top-0 right-0 -z-40 h-[60vw] w-[28vw] rounded-bl-3xl bg-[#124DAD]"
+        class="absolute top-0 right-0 h-[60vw] w-[28vw] rounded-bl-3xl bg-[#124DAD]"
       ></div>
       <div
-        class="absolute top-[5vw] right-[11vw] -z-30 h-[41vw] w-[36vw] bg-[#11B575]"
+        class="absolute top-[5vw] right-[11vw] h-[41vw] w-[36vw] bg-[#11B575]"
       ></div>
-      <div class="absolute top-[9vw] right-[15vw] -z-20 h-[41vw] w-[36vw]">
+      <div class="absolute top-[9vw] right-[15vw] h-[41vw] w-[36vw]">
         <img src="img/Classroom1.jpg" alt="Classroom" />
       </div>
-      <div class="absolute right-[5vw] top-[11vw] -z-10 h-[13vw] w-[20vw]">
+      <div class="absolute right-[5vw] top-[11vw] h-[13vw] w-[20vw]">
         <img src="img/Group.jpg" alt="Group" />
       </div>
-      <div class="absolute top-[27vw] right-[5vw] -z-10 h-[11vw] w-[33vw]">
+      <div class="absolute top-[27vw] right-[5vw] h-[11vw] w-[33vw]">
         <img src="img/LOGO.jpg" alt="LOGO" />
       </div>
-      <div class="absolute top-[45vw] right-[-5vw] -z-10 h-[34vw] w-[18vw]">
+      <div class="absolute top-[45vw] right-[-5vw] h-[34vw] w-[18vw]">
         <img src="img/Deco6.png" alt="Deco6" />
       </div>
 
       <!-- Information -->
       <img class="ml-[3vw] mt-[5vw] h-[14vw]" src="img/Deco1.png" alt="Deco1" />
-      <p class="text-center text-[7vw]">最新公告</p>
 
       <div
-        class="flex flex-col items-center gap-y-3 overscroll-y-auto pt-[2vw]"
+        id="news"
+        class="scroll-pt-15 relative mx-auto flex h-[60vh] w-[95vw] snap-proximity flex-col items-center gap-y-5 overflow-y-auto pt-[2vw]"
       >
+        <p class="text-center text-[7vw]">最新公告</p>
         <div
+          id="news-loading"
+          class="absolute inset-0 flex h-[60vh] items-center justify-center bg-black/60"
+        >
+          <div class="lds-facebook">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <template id="news-template">
+          <div
+            class="block w-[70vw] snap-center rounded-lg bg-[#F9F8F8] px-[2vw] py-[2vw] text-[2vw]"
+          >
+            <p class="pb-1 text-[2.3vw]">000.00.00 公告!</p>
+            <p class="pb-3">
+              世界需要改革，需要bluh有新的認知。薩克雷說過一句很有意思的話，金錢可以買“床鋪”;但不能買“睡眠”。請諸位將這段話在心中默念三遍。
+            </p>
+            <a href="#" class="news-item"> 強烈建議大家把這段話牢牢記住.pdf </a>
+          </div>
+        </template>
+        <div id="news-insert-point"></div>
+        <!-- <div
           class="block w-[70vw] rounded-lg bg-[#F9F8F8] px-[2vw] py-[2vw] text-[2vw]"
         >
-          <p class="">
+          <p class="pb-1 text-[2.3vw]">000.00.00 公告!</p>
+          <p class="pb-3">
             世界需要改革，需要bluh有新的認知。薩克雷說過一句很有意思的話，金錢可以買“床鋪”;但不能買“睡眠”。請諸位將這段話在心中默念三遍。
           </p>
-          <a href="#" class="space-y-1">強烈建議大家把這段話牢牢記住.pdf</a>
+          <a href="#" class="news-item">強烈建議大家把這段話牢牢記住.pdf</a>
         </div>
         <div
           class="block w-[70vw] rounded-lg bg-[#F9F8F8] px-[2vw] py-[2vw] text-[2vw]"
@@ -75,8 +102,8 @@
           <p class="">
             世界需要改革，需要bluh有新的認知。薩克雷說過一句很有意思的話，金錢可以買“床鋪”;但不能買“睡眠”。請諸位將這段話在心中默念三遍。
           </p>
-          <a href="#" class="space-y-1">強烈建議大家把這段話牢牢記住.pdf</a>
-        </div>
+          <a href="#" class="news-item">強烈建議大家把這段話牢牢記住.pdf</a>
+        </div> -->
       </div>
 
       <!-- Link Buttom -->
@@ -84,16 +111,22 @@
         <img src="img/Deco2.png" alt="Deco2" />
       </div>
       <div
+        class="flex flex-col items-center justify-center gap-8 pt-[5vw] md:flex-row md:gap-x-24"
+      >
+        <a href="#" class="link"> &nbsp;戲劇班官網&nbsp; </a>
+        <a href="#" class="link"> 臉書粉絲專頁 </a>
+      </div>
+      <!-- <div
         class="flex flex-col items-center space-y-3 pt-[5vw] hover:bg-[#F9F8F8] hover:text-[#11B575] md:hidden"
       >
         <a
           href="#"
-          class="h-[4.6vw] w-[20vw] rounded-full bg-[#11B575] text-center text-[2.5vw] text-white"
+          class="w-[20vw] rounded-full bg-[#11B575] py-3 text-center text-[2.5vw] text-white"
           >戲劇班官網</a
         >
         <a
           href="#"
-          class="h-[4.6vw] w-[20vw] rounded-full bg-[#11B575] text-center text-[2.5vw] text-white"
+          class="w-[20vw] rounded-full bg-[#11B575] py-3 text-center text-[2.5vw] text-white"
           >臉書粉絲專頁</a
         >
       </div>
@@ -110,7 +143,7 @@
           class="h-[4.6vw] w-[20vw] rounded-full bg-[#11B575] text-center text-[2.5vw] text-white"
           >臉書粉絲專頁</a
         >
-      </div>
+      </div> -->
 
       <!-- Footer -->
       <div
@@ -128,8 +161,12 @@
           <div class="text-left">
             <p>主辦學校：臺北市立復興高級中學</p>
             <p>主辦單位：藝術組</p>
-            <p>聯絡電話：</p>
-            <p>28914131分機8101、8102藝術組、8600戲劇班</p>
+            <!-- <p>聯絡電話：</p>
+            <p>28914131分機8101、8102藝術組、8600戲劇班</p> -->
+            <p>
+              連絡電話：<br class="md:hidden" />
+              (02)2891-4131分機8101、8102藝術組、8600戲劇班
+            </p>
           </div>
         </div>
       </div>
